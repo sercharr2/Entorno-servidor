@@ -1,6 +1,6 @@
 <?php
 
-    $hn = 'localhost';
+    $hn = 'localhost:3307';
     $db = 'bdsimon';
     $un = 'root';
     $pw = '';

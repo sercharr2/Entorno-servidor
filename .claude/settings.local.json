@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\xampp\\\\htdocs\\\\laravel\\\\Calculadora\\\\resources\\\\views\\\\hermeto\")",
+      "Bash(git remote *)",
+      "Bash(git config *)",
+      "Bash(git add *)"
+    ]
+  }
+}

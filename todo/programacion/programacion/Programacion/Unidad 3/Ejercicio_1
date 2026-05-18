@@ -1,0 +1,26 @@
+<?php
+$per = array(
+$per1=array ( "Yolanda", "Igleias","Suarez"),
+
+$per2=array("Manu", "Fernández","Corrillero")
+);
+
+
+foreach($per as $per)
+{
+echo $per[0]." ".$per[1]." ".$per[2]."
+";
+
+}
+
+
+
+
+
+
+
+
+
+
+
+?>

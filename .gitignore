@@ -1,0 +1,32 @@
+# Dependencias de PHP / Laravel
+vendor/
+node_modules/
+
+# Archivos de entorno con claves y configuración local
+.env
+.env.*
+!.env.example
+
+# Caché y logs generados por Laravel
+bootstrap/cache/
+storage/logs/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+
+# Archivos compilados de assets
+public/hot
+public/storage
+
+# Archivos de sistema / editores
+.DS_Store
+Thumbs.db
+*.log
+*.cache
+.idea/
+.vscode/
+
+# XAMPP: carpetas internas del servidor que no son código tuyo
+xampp/
+webalizer/
+dashboard/

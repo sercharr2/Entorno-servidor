@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Gráfica de aciertos (solo HTML/CSS)</title>
+<style>
+  body { font-family: Arial, sans-serif; padding:20px; }
+  table { border-collapse: collapse; width: 720px; max-width:100%; }
+  th, td { border: 1px solid #bbb; padding: 6px 8px; text-align: left; vertical-align: middle; }
+  th { background:#f3f3f3; }
+  .num { width:80px; text-align:center; white-space: nowrap; }
+  .bar-wrap { width: 280px; min-width:140px; }
+  .bar-bg {
+    height: 18px;
+    border-radius: 4px;
+    background:#eee;
+    position: relative;
+    overflow: hidden;
+  }
+  .bar {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg,#1f77b4,#0b66a3);
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+  }
+  caption { font-weight: bold; margin-bottom:8px; text-align:left; }
+</style>
+</head>
+<body>
+
+<table>
+  <caption>Resultados por usuario</caption>
+  <thead>
+    <tr>
+      <th>Código usuario</th>
+      <th>Nombre</th>
+      <th class="num">Número aciertos</th>
+      <th>Gráfica</th>
+    </tr>
+  </thead>
+  <tbody id="table-body">
+    <!-- filas generadas por JS -->
+  </tbody>
+</table>
+
+<script>
+  // datos: [codigo, nombre, aciertos]
+  const data = [
+    [1, 'ana', 2],
+    [2, 'maria', 2],
+    [3, 'paco', 2],
+    [4, 'fede', 5],
+    [5, 'lupe', 3],
+    [6, 'jose', 4],
+    [7, 'luis', 6],
+    [8, 'rita', 1],
+    [9, 'marta', 4],
+    [10, 'carlos', 3]
+  ];
+
+  const tbody = document.getElementById('table-body');
+
+  data.forEach(([codigo, nombre, aciertos]) => {
+    const tr = document.createElement('tr');
+
+    tr.innerHTML = `
+      <td>${codigo}</td>
+      <td>${nombre}</td>
+      <td class="num">${aciertos}</td>
+      <td>
+        <div class="bar-wrap">
+          <div class="bar-bg">
+            <div class="bar" style="width: ${aciertos * 10}%"></div>
+          </div>
+        </div>
+      </td>
+    `;
+
+    tbody.appendChild(tr);
+  });
+</script>
+
+</body>
+</html>

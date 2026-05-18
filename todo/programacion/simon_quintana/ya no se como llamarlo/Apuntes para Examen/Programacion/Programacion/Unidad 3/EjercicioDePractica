@@ -1,0 +1,18 @@
+<?php
+
+// Definimos los arrays.
+$array_numeros = array(3, 2, 5, 4, 1);
+$array_valores = array("Hola", "adios", "pepe", "juan", "perro", "noma");
+
+// Ordenamos los arrays.
+sort($array_numeros);
+sort($array_valores);
+
+// Mostramos los arrays ordenados.
+echo "Array de números ordenado:<br>";
+print_r($array_numeros);
+
+echo "<br><br>Array de valores ordenado:<br>";
+print_r($array_valores);
+
+?>

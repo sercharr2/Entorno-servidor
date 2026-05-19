@@ -1,0 +1,15 @@
+# .htaccess raíz para servir el proyecto con Apache (XAMPP) sin tener
+# que poner /public/ en la URL. Reescribe internamente cualquier petición
+# hacia la carpeta public/, donde Laravel tiene su propio .htaccess que
+# enruta todo a public/index.php.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Si el recurso pedido ya existe físicamente, no lo tocamos.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Cualquier otra cosa la reescribimos contra public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
